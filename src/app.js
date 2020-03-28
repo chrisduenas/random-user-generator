@@ -9,7 +9,7 @@ class App extends React.Component {
         axios.get('http://localhost:3000/users')
              .then(res => {
                  console.log(res.data);
-                 store.dispatch(addUsers(response.data.results));
+                 store.dispatch(addUsers(res.data.results));
              })
     }
 
