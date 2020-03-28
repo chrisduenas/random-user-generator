@@ -4,6 +4,8 @@ import axios from 'axios';
 import store from './store/store';
 import { addUsers } from './actions/users';
 import Header from './components/Header'
+import { Provider } from 'react-redux';
+
 
 class App extends React.Component {
     componentDidMount() {
@@ -23,4 +25,8 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(
+<Provider store={store}>
+    <App/>
+</Provider>,
+document.getElementById('root'));
