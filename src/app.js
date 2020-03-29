@@ -6,10 +6,11 @@ import { addUsers } from './actions/users';
 import { Provider } from 'react-redux';
 import Header from './components/Header'
 import UsersList from './components/UsersList';
+import './css/styles.css'
 
 class App extends React.Component {
     componentDidMount() {
-        axios.get('http://localhost:3000/users')
+        axios.get('/users')
              .then(res => {
                  console.log(res.data);
                  store.dispatch(addUsers(res.data.results));
