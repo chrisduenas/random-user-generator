@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const cors = require('cors');
+// const cors = require('cors'); //removing cors to avoid running two separate commands
+const path = require('path');
 
 //middleware
-app.use(cors());
+// app.use(cors());
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/', (req,res) => {
     res.send("<h1> Home Page </h1>");
